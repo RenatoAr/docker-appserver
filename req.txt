@@ -1,4 +1,5 @@
 Flask
-flask-restplus
-Flask-Admin
-gunicorn
+Jinja2
+Werkzeug
+distribute
+wsgiref
