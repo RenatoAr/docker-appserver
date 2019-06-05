@@ -1,21 +1,26 @@
 import os
 
 from flask import Flask, request
+import docker
 
 app = Flask(__name__)
 
-nome = 'nada'
+dados = 'nada'
+# client = docker.from_env()
+# container = client.containers.get('docker-flask')
 
 @app.route('/', methods=['GET'])
 def getinfo():
-    global nome
-    return 'Hello '+ nome
+    global dados
+    # global container
+    #return 'Hello '+ container
+    return 'Hello '+ dados
 
 @app.route('/', methods=['POST'])
 def postinfo():
-    global nome
-    nome = request.form['nome']
-    return 'hello' + nome
+    global dados
+    dados = request.form['nome']
+    return 'hello' + dados
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
