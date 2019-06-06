@@ -5,7 +5,7 @@ import docker
 
 app = Flask(__name__)
 
-dados = 'nada'
+dados = 'sudo docker ps -aqf "name=docker-flask"'
 # client = docker.from_env()
 # container = client.containers.get('docker-flask')
 
