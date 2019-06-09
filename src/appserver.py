@@ -1,7 +1,8 @@
 import os
+import json
+import requests
 
 from flask import Flask, request
-import docker
 
 app = Flask(__name__)
 
@@ -14,9 +15,9 @@ def getinfo():
 
 @app.route('/', methods=['POST'])
 def postinfo():
+    dados = request.get_json()
+    print dados
     global dados
-    dados = request.form['nome']
-    return dados
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
