@@ -8,12 +8,12 @@ app = Flask(__name__)
 
 dados = 'Hello World\n'
 
-@app.route('/', methods=['GET'])
+@app.route('/GET_INFO', methods=['GET'])
 def getinfo():
     global dados
     return dados
 
-@app.route('/', methods=['POST'])
+@app.route('/POST_INFO', methods=['POST'])
 def postinfo():
     global dados
     dados = request.get_json(force=True)
