@@ -6,7 +6,7 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-dados = 'Hello World\n'
+dados = 'Hello World'
 nomecontainer = 'vazio'
 idcontainer = 'vazio'
 idimage = 'vazio'
