@@ -21,7 +21,7 @@ def getinfo():
     global idimage
     global usocpu
     global usomem
-    return jsonify({'timestamp':dados, 'nomedocontainer':nomecontainer, 'idcontainer':idcontainer, 'idimage':idimage, 'usocpu':cpuusage, 'usomem':memusage})
+    return jsonify({'timestamp':dados, 'nomedocontainer':nomecontainer, 'idcontainer':idcontainer, 'idimage':idimage, 'usocpu':usocpu, 'usomem':usomem})
 
 @app.route('/POST_INFO', methods=['POST'])
 def postinfo():
@@ -35,9 +35,9 @@ def postinfo():
     nomecontainer = request.form['nomecontainer']
     idcontainer = request.form['idcontainer']
     idimage = request.form['idimage']
-    cpuusage = request.form['usocpu']
-    memusage = request.form['usomem']
-    return jsonify({'timestamp':dados, 'nomedocontainer':nomecontainer, 'idcontainer':idcontainer, 'idimage':idimage, 'usocpu':cpuusage, 'usomem':memusage})
+    usocpu = request.form['usocpu']
+    usomem = request.form['usomem']
+    return jsonify({'timestamp':dados, 'nomedocontainer':nomecontainer, 'idcontainer':idcontainer, 'idimage':idimage, 'usocpu':usocpu, 'usomem':usomem})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
