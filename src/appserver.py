@@ -29,8 +29,8 @@ def postinfo():
     global nomecontainer
     global idcontainer
     global idimage
-    global cpuusage
-    global memusage
+    global usocpu
+    global usomem
     dados = request.form['timestamp']
     nomecontainer = request.form['nomecontainer']
     idcontainer = request.form['idcontainer']
