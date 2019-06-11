@@ -7,17 +7,37 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 dados = 'Hello World\n'
+nomecontainer = 'vazio'
+idcontainer = 'vazio'
+idimage = 'vazio'
+cpuusage = 'vazio'
+memusage = 'vazio'
 
 @app.route('/GET_INFO', methods=['GET'])
 def getinfo():
     global dados
-    return dados
+    global nomecontainer
+    global idcontainer
+    global idimage
+    global usocpu
+    global usomem
+    return jsonify({'timestamp':dados, 'nomedocontainer':nomecontainer, 'idcontainer':idcontainer, 'idimage':idimage, 'usocpu':cpuusage, 'usomem':memusage})
 
 @app.route('/POST_INFO', methods=['POST'])
 def postinfo():
     global dados
-    dados = request.get_json(force=True)
-    return jsonify(dados)
+    global nomecontainer
+    global idcontainer
+    global idimage
+    global cpuusage
+    global memusage
+    dados = request.form['timestamp']
+    nomecontainer = request.form['nomecontainer']
+    idcontainer = request.form['idcontainer']
+    idimage = request.form['idimage']
+    cpuusage = request.form['usocpu']
+    memusage = request.form['usomem']
+    return jsonify({'timestamp':dados, 'nomedocontainer':nomecontainer, 'idcontainer':idcontainer, 'idimage':idimage, 'usocpu':cpuusage, 'usomem':memusage})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
