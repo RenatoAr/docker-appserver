@@ -10,8 +10,8 @@ dados = 'Hello World\n'
 nomecontainer = 'vazio'
 idcontainer = 'vazio'
 idimage = 'vazio'
-cpuusage = 'vazio'
-memusage = 'vazio'
+usocpu = 'vazio'
+usomem = 'vazio'
 
 @app.route('/GET_INFO', methods=['GET'])
 def getinfo():
