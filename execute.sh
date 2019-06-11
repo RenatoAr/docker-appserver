@@ -1,5 +1,7 @@
 #!bin/bash
 
+#Para container caso esteja rodando
+sudo docker stop docker-appserver
 #Destroi container docker-appserver se exisir
 sudo docker rm docker-appserver
 #Destroi imagem docker-appserver se exitir
