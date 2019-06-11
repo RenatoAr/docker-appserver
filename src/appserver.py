@@ -6,7 +6,7 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-dados = 'Hello World'
+dados = 'vazio'
 nomecontainer = 'vazio'
 idcontainer = 'vazio'
 idimage = 'vazio'
@@ -21,7 +21,7 @@ def getinfo():
     global idimage
     global usocpu
     global usomem
-    return jsonify({'timestamp':dados, 'nomedocontainer':nomecontainer, 'idcontainer':idcontainer, 'idimage':idimage, 'usocpu':usocpu, 'usomem':usomem})
+    return jsonify({'timestamp':dados, 'nomecontainer':nomecontainer, 'idcontainer':idcontainer, 'idimage':idimage, 'usocpu':usocpu, 'usomem':usomem})
 
 @app.route('/POST_INFO', methods=['POST'])
 def postinfo():
@@ -37,7 +37,7 @@ def postinfo():
     idimage = request.form['idimage']
     usocpu = request.form['usocpu']
     usomem = request.form['usomem']
-    return jsonify({'timestamp':dados, 'nomedocontainer':nomecontainer, 'idcontainer':idcontainer, 'idimage':idimage, 'usocpu':usocpu, 'usomem':usomem})
+    return jsonify({'timestamp':dados, 'nomecontainer':nomecontainer, 'idcontainer':idcontainer, 'idimage':idimage, 'usocpu':usocpu, 'usomem':usomem})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
